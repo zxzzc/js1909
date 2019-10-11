@@ -1,0 +1,477 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #f5f5f5;
+    font-size: 12px;
+    font-family: "Microsoft YaHei",Verdana,Geneva,sans-serif,\5b8b\4f53;
+}
+.wrap {
+    width: 1190px;
+    margin: 0 auto;
+}
+li{
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #666;
+}
+font, em {
+    font-style: normal;
+}
+
+/*  */
+.header {
+    height: 33px;
+    background-color: #474747;
+    color: #CCC;
+}
+
+/* 左半部分------------------- */
+.welcome {
+    margin-top: 7px;
+}
+.f_left {
+    float: left;
+}
+/* 右半部分----------------------- */
+/* 购物车--------------- */
+.f_right {
+    float: right;
+}
+.header_cart_tip {
+    width: 138px;
+    position: relative;
+    z-index: 2;
+}
+.header_cart_tip .text {
+    height: 33px;
+    line-height: 33px;
+    background-color: #1e1e1e;
+    text-align: center;
+    cursor: pointer;
+    display: block;
+}
+.header_cart_tip .text .icon {
+    display: inline-block;
+    margin-right: 8px;
+    width: 20px;
+    height: 14px;
+    overflow: hidden;
+    background: url(../images/base.png) no-repeat -164px -20px;
+    vertical-align: -2px;
+}
+.header_cart_tip .cart_list {
+    position: absolute;
+    top: 33px;
+    right: 0;
+    width: 350px;
+    background-color: #fafafa;
+    z-index: 1;
+    display: none;
+    box-shadow: 0 2px 3px #CCC;
+}
+.header_cart_tip .text span {
+    color: #db313e;
+    font-weight: bold;
+    font-family: Arial;
+}
+.header_cart_tip .text:hover {
+    background-color: red;
+    color: white
+}
+.header_cart_tip .text:hover span{
+    color: white
+}
+.header_cart_tip .text:hover .icon{
+    background-color: white
+}
+
+
+/* 鼠标移入显示购物车商品 */
+/* .cart_list{
+    overflow: hidden; 
+    display: none; 
+    height: 106px; 
+    padding-top: 0px; 
+    margin-top: 0px; 
+    padding-bottom: 0px; 
+    margin-bottom: 0px;
+} */
+
+
+
+/* 订单和登陆注册部分--------------- */
+.header dl {
+    margin: 11px 35px 0 0;
+}
+.header dt, .header dd {
+    float: left;
+    padding: 0 7px;
+    height: 11px;
+    line-height: 11px;
+}
+.header dl a {
+    display: inline-block;
+    color: #CCC;
+}
+.header dd {
+    border-left: 1px solid #666;
+}
+.header dl dt a:hover,.header dl dd a:hover{
+    color: whitesmoke;
+}
+
+.top_nav {
+    height: 101px;
+    background-color: #FFF;
+    border-bottom: 3px solid #de2f3c;
+    box-shadow: 0 3px 3px #CCC;
+}
+/* 完美世界logo -----*/
+.top_nav .logo_wm {
+    width: 183px;
+    text-align: center;
+    height: 72px;
+    padding-top: 29px;
+    background-color: #c20315;
+    margin-bottom: -3px;
+}
+/* 商城logl--------- */
+.top_nav .logo_shop {
+    margin: 37px 0 0 34px;
+}
+/* 全部商品部分 */
+.top_nav .all_wares {
+    position: relative;
+    width: 175px;
+    margin-left: 50px;
+    text-indent: 19px;
+    z-index: 1;
+}
+/* 全部商品上的样式 */
+.top_nav .all_wares .text {
+    height: 101px;
+    line-height: 101px;
+    font-size: 15px;
+    cursor: pointer;
+}
+/* 全部商品上的小图标 */
+.top_nav .all_wares .text span {
+    display: inline-block;
+    width: 15px;
+    height: 13px;
+    margin-right: 7px;
+    background: url(../images/base.png) no-repeat -24px 0;
+    vertical-align: -1px;
+}
+
+/* 后四个的样式--------- */
+.top_nav .nav {
+    margin-top: 40px;
+}
+.top_nav .nav li {
+    float: left;
+    padding: 0 15px;
+    font-size: 15px;
+}
+.top_nav .nav li a:hover{
+    color: red;
+}
+/* 搜索框部分----------- */
+.header_search {
+    position: relative;
+    width: 320px;
+    height: 41px;
+    margin-top: 30px;
+    z-index: 1;
+}
+.header_search .text {
+    float: left;
+    width: 263px;
+    height: 39px;
+    line-height: 39px;
+    padding: 0 5px;
+    border: 1px solid #CCC;
+    border-right: 0;
+}
+.header_search .btn {
+    float: right;
+    width: 46px;
+    height: 41px;
+    border: 0;
+    background: #e32332 url(../images/search.png) no-repeat center;
+    cursor: pointer;
+}
+
+
+/* 面包屑导航 */
+.nav_bar {
+    height: 44px;
+    line-height: 44px;
+    background-color: #f5f5f5;
+    color: #666;
+}
+.nav_bar a {
+    padding-right: 3px;
+}
+
+/* 购物车主体 */
+/* 购物车空 */
+.cart_null {
+    height: 300px;
+    line-height: 300px;
+    margin-bottom: 40px;
+    font-size: 18px;
+    background-color: #FFF;
+    color: #666;
+    text-align: center;
+    display: none;
+}
+
+.cart_null span {
+    display: inline-block;
+    width: 80px;
+    height: 60px;
+    margin-right: 14px;
+    background: url(../images/base.png) no-repeat -78px -132px;
+    vertical-align: -11px;
+}
+.cart_null a {
+    padding: 0 5px;
+    color: #e90404;
+}
+
+/* 购物车有商品 */
+
+.cart_list table {
+    width: 100%;
+}
+.cart_list tbody tr{
+    height: 137px;
+}
+.cart_list td {
+    background-color: #FFF;
+    border-bottom: 1px solid #ededed;
+    text-align: center;
+
+}
+.cart_list thead td {
+    height: 54px;
+    font-size: 14px;
+    color: #666;
+}
+.cart_list thead .state {
+    width: 111px;
+}
+.cart_list thead .state span {
+    margin-right: 10px;
+}
+.cart_list thead .num {
+    width: 200px;
+}
+.cart_list thead .prices {
+    width: 150px;
+}
+.cart_list thead .operation {
+    width: 150px;
+}
+span.checkbox {
+    position: relative;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+}
+span.checkbox label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #d4d4d4;
+    background-color: #FFF;
+    cursor: pointer;
+}
+
+/* span.checkbox label.curr:hover{
+    background: #e32332 url(../images/base.png) no-repeat -78px -100px;
+} */
+/* 点击按钮发生事件让框内背景图为有对号的背景图 */
+/* span.checkbox label.curr {
+    background: #e32332 url(../images/base.png) no-repeat -78px -100px;
+    border-color: #e32332;
+} */
+
+
+/* 商品名字 */
+.f_left {
+    float: left;
+}
+.cart_list td img {
+    width: 72px;
+    height: 72px;
+    border: 1px solid #ddd;
+}
+.cart_list dd {
+    text-align: left;
+    margin-left: 18px;
+}
+.cart_list dl {
+    margin: 15px 0 ;
+    margin-bottom: 29px;
+}
+.cart_list dd h1 {
+    width: 486px;
+    display: block;
+    font-size: 14px;
+    color: #424242;
+}
+.cart_list dd h1 a.name {
+    max-width: 400px;
+    height: 20px;
+    overflow: hidden;
+    float: left;
+    margin-right: 5px;
+}
+
+.cart_list dd p {
+    color: #999;
+    height: 18px;
+    display: inline-block;
+    overflow: hidden;
+    max-width: 400px;
+}
+.ellipsis2 {
+    /* overflow: hidden; */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* display: inline-block; */
+}
+
+/* 数量 */
+.amount {
+    display: inline-block;
+    width: 78px;
+    height: 22px;
+    margin-right: 11px;
+    border: 1px solid #e0e0e0;
+    vertical-align: middle;
+}
+.amount .reduce {
+    background: url(../images/base.png) no-repeat -234px -97px;
+}
+.amount .plus {
+    background: url(../images/base.png) no-repeat -233px -132px;
+}
+.amount input {
+    width: 32px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border: 0;
+    vertical-align: middle;
+    font-size: 12px;
+}
+.amount span {
+    display: inline-block;
+    width: 23px;
+    height: 22px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.cart_list td .stock {
+    padding-top: 8px;
+    color: #999;
+}
+/* 价格 */
+.cart_list td.price {
+    font-size: 20px;
+    color: #e90404;
+}
+/* ❌操作 */
+.cart_list td .del {
+    display: inline-block;
+    width: 22px;
+    height: 20px;
+    padding-top: 2px;
+    border-radius: 11px;
+}
+.cart_list td .del span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    overflow: hidden;
+    background: url(../images/base.png) no-repeat -292px 0;
+}
+
+/* 结算 */
+.total_bar {
+    margin-top: 5px;
+    height: 90px;
+    line-height: 90px;
+    padding: 0 32px 0 28px;
+    background-color: #FFF;
+    font-size: 14px;
+    color: #666;
+}
+.total_bar .f_left span {
+    margin-right: 10px;
+}
+.total_bar .f_left a {
+    margin-left: 22px;
+}
+.total_bar .f_right {
+    position: relative;
+}
+.f_right {
+    float: right;
+}
+
+.total_bar .f_right .btn {
+    width: 188px;
+    height: 50px;
+    margin-left: 20px;
+    font-size: 18px;
+    border: 0;
+    cursor: pointer;
+    color: #FFF;
+    background-color: #e32332;
+}
+.total_bar .f_right .tip {
+    position: absolute;
+    bottom: 79px;
+    right: 0;
+    height: 43px;
+    line-height: 43px;
+    padding: 0 23px;
+    background-color: #FFF;
+    border: 1px solid #e32332;
+    color: #e90404;
+    display: block
+}
+.total_bar .f_right .tip s {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    margin-left: -7px;
+    width: 15px;
+    height: 8px;
+    overflow: hidden;
+    background: url(../images/base.png) no-repeat -54px -12px;
+}
+.total_bar .f_right #num {
+    font-size: 24px;
+}
+.total_bar .f_right span {
+    margin: 0 7px;
+    color: #e90404;
+}
+
+
+
+
+
+

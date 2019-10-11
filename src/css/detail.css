@@ -1,0 +1,439 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: 0;
+    font-size: 12px;
+    font-family: "Microsoft YaHei",Verdana,Geneva,sans-serif,\5b8b\4f53;
+    min-width: 1260px;
+    padding-top: 130px;
+}
+.wrap {
+    width: 1239px;
+    margin: 0 auto;
+}
+a{
+    text-decoration: none;
+}
+.cf {
+    zoom: 1;
+}
+li{
+    list-style: none;
+}
+
+
+
+
+/* 顶部 */
+.wrap_dota2-top-col {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #1f1f20;
+    min-width: 1260px;
+}
+.wrap_dota2-top {
+    width: 100%;
+    height: 90px;
+    position: relative;
+    border-bottom: 1px solid #333;
+}
+.wrap_dota2-logo-dota2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 226px;
+    height: 32px;
+    margin-top: -16px;
+    margin-left: -630px;
+}
+.wrap_dota2-logo-shop {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 132px;
+    height: 64px;
+    margin-left: -380px;
+    margin-top: -32px;
+}
+.wrap_dota2-user-info {
+    width: 575px;
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    margin-top: -15px;
+    height: 30px;
+    line-height: 30px;
+    margin-right: -630px;
+}
+
+.wrap_dota2-after-login {
+    float: left;
+    margin-right: 10px;
+    font-style: 14px;
+    color: #fff;
+}
+.wrap_dota2-after-login a {
+    float: none;
+    font-size: 14px;
+    margin: 0;
+    color: #999;
+}
+.wrap_dota2-after-login a:hover{
+    color: red;
+}
+/* 我的订单，我的关注，我的购物车 */
+.wrap_dota2-user-info .myorder {
+    background: url(../images/icon-people2.png) 0 50% no-repeat;
+    padding-left: 25px;
+}
+.wrap_dota2-user-info .myorder:hover{
+    color: red;
+}
+.wrap_dota2-user-info .myfavorite {
+    background: url(../images/icon-heart.png) 0 50% no-repeat;
+    padding-left: 25px;
+}
+.wrap_dota2-user-info .myfavorite:hover{
+    color: red;
+    background: url(../images/icon-heart-hov2\ \(1\).png) 0 50% no-repeat;
+}
+.wrap_dota2-user-info .mycart {
+    background: url(../images/icon-cart.png) 0 50% no-repeat;
+    padding-left: 28px;
+}
+.wrap_dota2-user-info .mycart:hover{
+    color: red;
+}
+.wrap_dota2-user-info a {
+    float: left;
+    color: #999;
+    font-size: 14px;
+    margin: 0 16px;
+    height: 100%;
+}
+
+/* 导航栏部分 */
+.wrap_dota2-top-nav {
+    width: 1260px;
+    height: 38px;
+    margin: 0 auto;
+    line-height: 38px;
+    overflow: hidden;
+}
+.wrap_dota2-top-nav a {
+    float: left;
+    margin-right: 40px;
+    padding: 0 10px;
+    height: 38px;
+    text-align: center;
+    color: #999;
+    font-size: 16px;
+    position: relative;
+}
+/* 鼠标移入字体变红 */
+.wrap_dota2-top-nav a:hover{
+    color: red;
+}
+.wrap_dota2-top-search {
+    float: right;
+    margin-left: 30px;
+}
+.wrap_dota2-top-search input {
+    float: left;
+    width: 156px;
+    height: 34px;
+    line-height: 34px;
+    background-color: #191919;
+    border: 0;
+    color: #666;
+    text-indent: 15px;
+}
+.wrap_dota2-top-search a {
+    margin: 0;
+    width: 38px;
+    height: 38px;
+    background: #333 url(../images/icon-search.png) no-repeat center 8px;
+    padding: 0;
+}
+
+/* 面包屑导航 */
+.nav_bar {
+    height: 44px;
+    line-height: 44px;
+    background-color: #f5f5f5;
+    color: #666;
+}
+.nav_bar a {
+    padding-right: 3px;
+    color: #999;
+}
+
+/* 详细信息 */
+.goods_detail {
+    padding: 30px 0 40px 0;
+    background-color: #FFF;
+    overflow: hidden;
+}
+.f_left {
+    float: left;
+}
+.picFocus {
+    width: 430px;
+    position: relative;
+    overflow: hidden;
+    zoom: 1;
+    margin-right: 59px;
+}
+.tempWrap{
+    overflow:hidden; 
+    position:relative; 
+    width:430px
+}
+.tempWrap #tempWrap_ul{
+    width: 430px; 
+    height: 430px;
+    left: 0px;
+    position: relative; 
+    overflow: hidden; 
+}
+#tempWrap_ul>li{
+    float: left;
+    position: absolute;
+    left: 0px;
+     width: 430px;
+     display: none;
+}
+.picFocus .bd #tempWrap_ul .show {
+    display: block;
+}
+
+
+
+
+.picFocus .hd {
+    position: static;
+    width: 100%;
+    padding-top: 10px;
+    overflow: hidden;
+}
+.picFocus .hd ul {
+    margin-right: -10px;
+    overflow: hidden;
+    zoom: 1;
+}
+.picFocus .hd ul li.on, .picFocus .hd ul li:hover {
+    opacity: 1;
+    background: 0;
+}
+.picFocus .hd ul li {
+    opacity: .4;
+    float: left;
+    text-align: center;
+}
+.picFocus .hd ul li img {
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* 右侧信息 */
+.property {
+    width: 684px;
+    font-size: 14px;
+}
+.property .title h1 {
+    padding-bottom: 20px;
+    font-size: 30px;
+    color: #474747;
+    font-weight: normal;
+}
+.property .title p {
+    font-size: 16px;
+    color: #666;
+}
+/* 价格 */
+.property .price {
+    padding: 20px 0;
+    margin: 34px 0 25px 0;
+    font-size: 26px;
+    color: #e90404;
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
+}
+
+
+/* 运费 */
+.property th {
+    height: 48px;
+    text-align: left;
+    font-weight: normal;
+    color: #9a9a9a;
+    width: 72px;
+}
+
+.property .meta .from {
+    padding-right: 5px;
+}
+.property .meta .to {
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    border: 1px solid #FFF;
+}
+.property .meta .to i {
+    display: inline-block;
+    width: 12px;
+    height: 6px;
+    margin-left: 5px;
+    overflow: hidden;
+    background: url(../images/base.png) no-repeat 0 0;
+    vertical-align: middle;
+}
+.property .meta font {
+    margin-left: 29px;
+}
+/* 有个点击事件，点击可选城市 */
+/* .property .meta .popup {
+    position: absolute;
+    top: 462px;
+    left: 949px;
+    display: block;
+    width: 300px;
+    font-size: 12px;
+    min-height: 100px;
+    padding: 20px 24px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 3px 3px #CCC;
+    background-color: #FFF;
+    z-index: 2;
+}
+.property .meta .popup dd {
+    float: left;
+    cursor: pointer;
+    padding: 5px 10px;
+} */
+/* .property .meta .popup .nav ul {
+    margin-bottom: -1px;
+}
+.property .meta .popup li.curr {
+    border: 1px solid #e32331;
+    border-bottom-color: #FFF;
+}
+.property .meta .popup li {
+    float: left;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.property .meta .popup li span {
+    display: inline-block;
+    width: 13px;
+    height: 6px;
+    margin-left: 6px;
+    overflow: hidden;
+    background: url(../images/base.png) no-repeat 0 0;
+    vertical-align: middle;
+}
+.property .meta .popup .close {
+    position: absolute;
+    top: 9px;
+    right: 10px;
+    width: 8px;
+    height: 8px;
+    padding: 5px;
+    text-align: center;
+    background-color: #ebebeb;
+    font-size: 0;
+}
+
+.property .meta .popup .close span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    overflow: hidden;
+    background: url(../images/base.png) no-repeat -292px 0;
+    cursor: pointer;
+} */
+
+
+/* .property .meta .popup .nav {
+    border-bottom: 1px solid #e32331;
+    margin-bottom: 15px;
+} */
+
+
+
+
+
+
+/* 数量计数 */
+.amount {
+    display: inline-block;
+    width: 78px;
+    height: 22px;
+    margin-right: 11px;
+    border: 1px solid #e0e0e0;
+    vertical-align: middle;
+}
+.amount .reduce {
+    background: url(../images/base.png) no-repeat -234px -97px;
+}
+.amount span {
+    display: inline-block;
+    width: 23px;
+    height: 22px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.amount input {
+    width: 32px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border: 0;
+    vertical-align: middle;
+    font-size: 12px;
+}
+.amount .plus {
+    background: url(../images/base.png) no-repeat -233px -132px;
+}
+
+
+
+/* 购买和加入购物车按钮 */
+.property .btns {
+    padding: 20px 0 53px;
+}
+.property .btns a {
+    display: inline-block;
+    width: 260px;
+    height: 66px;
+    line-height: 66px;
+    margin-right: 16px;
+    text-align: center;
+    font-size: 24px;
+}
+.property .btns .buy {
+    background-color: #e32332;
+    color: #FFF;
+}
+
+.property .btns .add {
+    width: 258px;
+    height: 64px;
+    line-height: 64px;
+    border: 1px solid #e32330;
+    color: #ea0406;
+}
+
+.property .btns a span {
+    width: 32px;
+    height: 24px;
+    display: inline-block;
+    background: url(../images/base.png) no-repeat -184px -74px;
+    margin-right: 10px;
+    vertical-align: -3px;
+}

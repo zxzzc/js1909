@@ -1,0 +1,306 @@
+*{
+   margin: 0px;
+   padding: 0px; 
+}
+body{
+    font: normal 14px/22px "Microsoft Yahei";
+    color: #666;
+    min-width: 1002px;
+    background: url(../images/animate-bg.jpg) #ffffff center top no-repeat;
+}
+a {
+    font-family: "Microsoft Yahei";
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+/* 背景-------------------------- */
+.circle-box {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 916px;
+    overflow: hidden;
+}
+.circle-box .circle-1 {
+    position: absolute;
+    left: 50%;
+    margin: 0 0 0 -716px;
+    top: 258px;
+    width: 630px;
+    height: 630px;
+    background: url(../images/circle-1.png) left center no-repeat;
+    /* animation: clockwise 40s linear infinite; */
+}
+.circle-box .circle-2 {
+    position: absolute;
+    right: -308px;
+    top: 202px;
+    width: 616px;
+    height: 616px;
+    background: url(../images/circle-2.png) left center no-repeat;
+    /* animation: antiClockwise 40s linear infinite; */
+}
+.circle-box .circle-3 {
+    position: absolute;
+    left: 50%;
+    top: -590px;
+    margin: 0 0 0 -590px;
+    width: 1181px;
+    height: 1181px;
+    background: url(../images/circle-3.png) left center no-repeat;
+    /* animation: antiClockwise 40s linear infinite; */
+}
+.circle-box .element-1 {
+    position: absolute;
+    left: 50%;
+    top: 160px;
+    margin: 0 0 0 450px;
+    width: 269px;
+    height: 417px;
+    background: url(../images/element1.png) left center no-repeat;
+    /* -webkit-animation: down_float 10s linear infinite; */
+}
+.circle-box .element-2 {
+    position: absolute;
+    left: 50%;
+    top: 350px;
+    margin: 0 0 0 -590px;
+    width: 1446px;
+    height: 207px;
+    background: url(../images/element2.png) left center no-repeat;
+    /* -webkit-animation: up_float 10s linear infinite; */
+}
+
+
+
+/* 头部完美世界标签 */
+.topbar-register {
+    width: 818px;
+    height: 35px;
+    margin: 0 auto 40px;
+
+    position: relative;
+    padding: 22px 30px 45px;
+    line-height: 35px;
+    color: #FFF;
+}
+.topbar-register.cl {
+    *zoom: 1;
+    height: auto;
+}
+.topbar-register .fl {
+    float: left;
+}
+.topbar-register a {
+    color: #FFF;
+}
+.topbar-register .logo img {
+    vertical-align: middle;
+    max-height: 35px;
+}
+
+
+/* 注册 */
+
+.as_register .cl:after {
+    clear: both;
+    overflow: hidden;
+}
+.as_register .cl:before, .as_register .cl:after {
+    content: "";
+    display: table;
+}
+.as_register input {
+    border: 0 none;
+    outline: none;
+}
+/* 注册部分总样式 */
+.as_register {
+    position: relative;
+    z-index: 10;
+    width: 818px;
+    height: auto;
+    padding: 60px 0;
+    background: #ffffff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    margin: 0 auto 56px;
+}
+
+.as_register .as_wrap {
+    width: 396px;
+    background: #ffffff;
+    margin: 0 auto;
+}
+/* 注册完美通行证标题 */
+.as_register .tit {
+    color: #333333;
+    line-height: 36px;
+    font-size: 34px;
+    text-shadow: none;
+    font-weight: normal;
+    margin: 0 0 10px;
+    letter-spacing: 5px;
+    text-align: center;
+}
+/* 标题下的小字 */
+.as_register .vicetit {
+    color: #999999;
+    line-height: 18px;
+    margin: 0 0 34px;
+    text-align: center;
+}
+/* 各种信息 */
+.as_register .func_tab {
+    margin: 0 auto 30px;
+}
+.as_register .func_tab .cur {
+    background-color: #d72020;
+    color: #FFF;
+}
+.as_register .func_tab a {
+    float: left;
+    width: 50%;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    background-color: #e4e4e4;
+    color: #666666;
+    font-size: 16px;
+}
+
+
+
+/* 设置间距 */
+.as_register .mb15 {
+    margin-bottom: 15px;
+}
+.as_register .mb17 {
+    margin-bottom: 17px;
+}
+.as_register .mb34 {
+    margin-bottom: 34px;
+}
+/* --------------------- */
+
+.as_register .ibox {
+    position: relative;
+    padding: 0 24px 0 10px;
+    height: 35px;
+    line-height: 35px;
+    border: 1px solid #5a5a5a;
+    background: rgba(255,255,255,0.3);
+    border-color: #dbdbdb;
+}
+.as_register .ibox input {
+    font-size: 14px;
+    width: 100%;
+    padding: 7px 0;
+    vertical-align: top;
+    line-height: normal;
+    background: none;
+}
+.as_register .ibox i{
+    position: absolute;
+    left: 400px;
+    top: 0px;
+    font-size: 12px;
+    width: 200px;
+}
+/* 设置密码等级 */
+.as_register .pwlevel {
+    overflow: hidden;
+    margin: 4px 0;
+    height: 16px;
+}
+/* .as_register .pwlevel ul{
+    display: none;
+} */
+.as_register .pwlevel .pwlv{
+    display: block;
+
+}
+.as_register .pwlevel .pwlv li{
+    float: left;
+    width: 100px;
+    height: 16px;
+    /* border: 1px soild gray; */
+}
+.as_register .pwlevel .pwlv .l {
+    background: green;
+    display: none;
+}
+.as_register .pwlevel .pwlv .m {
+    background: yellow;
+    display: none
+}
+.as_register .pwlevel .pwlv .h {
+    background: red;
+    display: none
+}
+.as_register .pwlevel .pwlv .cur{
+    display: block;
+}
+/* 验证码部分------------- */
+.as_register .vboxl {
+    width: 252px;
+    margin-right: 6px;
+}
+.as_register .fl {
+    float: left;
+}
+
+.as_register .vboxr {
+    width: 138px;
+}
+.as_register .vboxr a {
+    background: #f7f7f7;
+    border: 1px solid #dedede;
+    color: #666666;
+    display: block;
+    height: 37px;
+    line-height: 37px;
+    font-size: 16px;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* 接受协议 */
+.as_register .cbox {
+    min-height: 22px;
+    height: auto;
+    position: relative;
+    line-height: 22px;
+    margin: 17px 0 5px;
+}
+.as_register .cbox a {
+    color: #ff5a59;
+}
+.as_register .cbox a {
+    text-decoration: underline;
+}
+/* 注册通行证第一个按钮 */
+.as_register .rbtn_s1 {
+    width: 396px;
+    height: 44px;
+    font-size: 16px;
+    background: #ed1919;
+    border: 1px solid #dbdbdb;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+}
+/* 注册通行证第二个按钮 */
+.as_register .rbtn_s2 {
+    border: 2px solid #dbdbdb;
+    font-size: 16px;
+    color: #666666;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}

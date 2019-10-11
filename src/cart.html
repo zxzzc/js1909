@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/cart.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="wrap cf">
+            <!-- 左半部分 -->
+            <span class="f_left welcome">欢迎来到完美世界周边商城！</span>
+            <!-- 右半部分 -->
+            <!-- 购物车 -->
+            <div class="f_right header_cart_tip">
+                <a href="" class="text"><span class="icon"></span>购物车（<span class="cartNum">0</span>）</a>
+                <!-- 鼠标移入显示购物车商品部分 -->
+                <!-- <div class="cart_list">
+                    <p class="list_null">购物车还没有商品，快去挑选商品吧！</p>
+                </div> -->
+            </div>
+            <!-- 订单部分 -->
+            <dl class="f_right">
+                <dt><a href="" class="needLogin">我的订单</a></dt>
+                <dd><a href="" class="needLogin">我的关注</a></dd>
+            </dl>
+            <!-- 登陆注册部分 -->
+            <dl class="f_right userlogin">
+                <dt>欢迎<em>&nbsp;&nbsp;&nbsp;&nbsp;*****</em></dt>
+                <dd><a href="index.html" target="">退出</a></dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="top_nav">
+        <div class="wrap cf">
+            <!-- 完美世界logo -->
+            <a href="" class="f_left logo logo_wm"><img src="http://static.wanmei.com/shop/images/logo_wm.png"
+                    width="120" height="41" alt="" title="完美商城"></a>
+            <!-- 商城logo -->
+            <a href="" class="f_left logo logo_shop"><img src="http://static.wanmei.com/shop/images/logo_shop.png"
+                    width="55" height="27" alt="" title="完美商城"></a>
+            <div class="f_left all_wares">
+                <p class="text"><span></span>全部商品</p>
+                <!-- <ul>
+                    <li>
+                        <a href="" target="_blank" class="ellipsis2"
+                            title="DOTA2神秘商店">DOTA2神秘商店<em></em></a>
+                        <dl>
+                            <dd><a href="/product/list?cid=38" target="_blank">手办扭蛋</a></dd>
+                            <dd><a href="/product/list?cid=64" target="_blank">创意T恤</a></dd>
+                            <dd><a href="/product/list?cid=34" target="_blank">焕新服饰</a></dd>
+                            <dd><a href="/product/list?cid=37" target="_blank">生活用品</a></dd>
+                            <dd><a href="/product/list?cid=36" target="_blank">毛绒合辑</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <a href="" target="_blank" class="ellipsis2"
+                            title="完美世界周边">完美世界周边<em></em></a>
+                        <dl>
+                            <dd><a href="" target="_blank">梦间集周边</a></dd>
+                            <dd><a href="" target="_blank">诛仙3专区</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <a href="" target="_blank" class="ellipsis2"
+                            title="CSGO正版周边">CSGO正版周边<em></em></a>
+                    </li>
+                    <li>
+                        <a href="" target="_blank" class="ellipsis2"
+                            title="姜小虎系列周边">姜小虎系列周边<em></em></a>
+                    </li>
+                    <li>
+                        <a href="" target="_blank" class="ellipsis2" title="游戏外设">游戏外设<em></em></a>
+                        <dl>
+                            <dd><a href="/product/list?cid=85" target="_blank">键盘</a></dd>
+                            <dd><a href="/product/list?cid=86" target="_blank">鼠标</a></dd>
+                            <dd><a href="/product/list?cid=84" target="_blank">耳机</a></dd>
+                        </dl>
+                    </li>
+                </ul> -->
+            </div>
+            <ul class="nav f_left">
+                <li><a href="index.html" target="">首页</a></li>
+                <li><a href="" target="">完美世界周边</a></li>
+                <li><a href="" target="">DOTA2专区</a></li>
+                <li><a href="" target="">FAQ</a></li>
+            </ul>
+            <div class="f_right header_search">
+                <form action="" method="get" class="cf">
+                    <input type="text" class="text " value="">
+                    <input type="button" class="btn">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 面包屑导航 -->
+    <div class="nav_bar">
+        <div class="wrap">
+            <a href="/">首页</a>&gt;
+            <a href="">我的购物车</a>
+        </div>
+    </div>
+    <!-- 购物车主体 -->
+    <div class="wrap">
+        <!-- 购物车没商品 -->
+        <div class="cart_null">
+            <span></span>购物车空空的哦~，赶紧<a href="/">去选购</a>吧！
+        </div>
+        <!-- 购物车有商品 -->
+        <div class="cart_list">
+            <form id="cartForm" method="post" action="">
+                <table cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <td class="state"><span class="all_checkbox">
+                                    <span class="checkbox">
+                                        <input type="checkbox" class="selectall">
+                                    </span>
+                                    <label>全选</label>
+                                </span>
+                            </td>
+                            <td class="name">商品名称</td>
+                            <td class="num">数量</td>
+                            <td class="prices">价格</td>
+                            <td class="operation">操作</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="state">
+                                <span class="checkbox">
+                                    <input class="select" type="checkbox" name="pids" value="" >
+                                </span>
+                            </td>
+                            <td>
+                                <dl class="cf">
+                                    <dt class="f_left"><a href="" target=""><img
+                                                src="http://img.shop.wanmei.com/upload/product/2018-04-23/e1dde6d7d1e849d7b735a5436b1e5638_72.jpg"
+                                                alt="" title="赛睿 Apex M500 专业游戏背光机械键盘有线104cherry樱桃红轴青轴"></a></dt>
+                                    <dd class="f_left">
+                                        <h1 class="cf">
+                                            <a href="" class="name ellipsis2" target=""
+                                                title="赛睿 Apex M500 专业游戏背光机械键盘有线104cherry樱桃红轴青轴">赛睿 Apex M500
+                                                专业游戏背光机械键盘有线104cherry樱桃红轴青轴</a>
+                                        </h1>
+                                        <p class="ellipsis2" title="款式:红轴">款式:红轴</p>
+                                    </dd>
+                                </dl>
+                            </td>
+                            <td>
+                                <input id="" type="hidden">
+                                <span class="amount number-input"><span class="reduce disable"></span><input id=""
+                                        name="" type="text" value="1" min="1" maxlength="3" autocomplete="off"><span
+                                        class="plus"></span></span>
+
+                                <p class="stock">库存<font>50</font>件</p>
+
+
+                            </td>
+                            <td class="price">¥<font id="">819.00</font>
+                            </td>
+                            <td><a href="" class="del"><span></span></a></td>
+                        </tr>
+                        <tr>
+                            <td class="state">
+                                <span class="checkbox">
+                                    <input class="select" type="checkbox" name="pids" value="" >
+                                    <!-- <label class="curr"></label> -->
+                                </span>
+                            </td>
+                            <td>
+                                <dl class="cf">
+                                    <dt class="f_left"><a href="" target=""><img
+                                                src="http://img.shop.wanmei.com/upload/product/2018-04-23/e1dde6d7d1e849d7b735a5436b1e5638_72.jpg"
+                                                alt="" title="赛睿 Apex M500 专业游戏背光机械键盘有线104cherry樱桃红轴青轴"></a></dt>
+                                    <dd class="f_left">
+                                        <h1 class="cf">
+                                            <a href="" class="name ellipsis2" target=""
+                                                title="赛睿 Apex M500 专业游戏背光机械键盘有线104cherry樱桃红轴青轴">赛睿 Apex M500
+                                                专业游戏背光机械键盘有线104cherry樱桃红轴青轴</a>
+                                        </h1>
+                                        <p class="ellipsis2" title="款式:红轴">款式:红轴</p>
+                                    </dd>
+                                </dl>
+                            </td>
+                            <td>
+                                <input id="" type="hidden">
+                                <span class="amount number-input"><span class="reduce disable"></span><input id=""
+                                        name="" type="text" value="1" min="1" maxlength="3" autocomplete="off"><span
+                                        class="plus"></span></span>
+
+                                <p class="stock">库存<font>50</font>件</p>
+
+
+                            </td>
+                            <td class="price">¥<font id="">819.00</font>
+                            </td>
+                            <td><a href="" class="del"><span></span></a></td>
+                        </tr>
+                        <tr>
+                            <td class="state">
+                                <span class="checkbox">
+                                    <input class="select" type="checkbox" name="pids" value="">
+                                    <!-- <label class="curr"></label> -->
+                                </span>
+                            </td>
+                            <td>
+                                <dl class="cf">
+                                    <dt class="f_left"><a href="" target=""><img
+                                                src="http://img.shop.wanmei.com/upload/product/2018-04-23/e1dde6d7d1e849d7b735a5436b1e5638_72.jpg"
+                                                alt="" title="赛睿 Apex M500 专业游戏背光机械键盘有线104cherry樱桃红轴青轴"></a></dt>
+                                    <dd class="f_left">
+                                        <h1 class="cf">
+                                            <a href="" class="name ellipsis2" target=""
+                                                title="赛睿 Apex M500 专业游戏背光机械键盘有线104cherry樱桃红轴青轴">赛睿 Apex M500
+                                                专业游戏背光机械键盘有线104cherry樱桃红轴青轴</a>
+                                        </h1>
+                                        <p class="ellipsis2" title="款式:红轴">款式:红轴</p>
+                                    </dd>
+                                </dl>
+                            </td>
+                            <td>
+                                <input id="" type="hidden">
+                                <span class="amount number-input"><span class="reduce disable"></span><input id=""
+                                        name="" type="text" value="1" min="1" maxlength="3" autocomplete="off"><span
+                                        class="plus"></span></span>
+
+                                <p class="stock">库存<font>50</font>件</p>
+
+
+                            </td>
+                            <td class="price">¥<font id="">819.00</font>
+                            </td>
+                            <td><a href="" class="del"><span></span></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="cf total_bar">
+                    <p class="f_left">
+                        <!-- <span><span class="checkbox"><label class="curr"></label></span><label>全选</label></span> -->
+                        <a href="">删除选中商品</a>
+                        <a href="">继续购物</a>
+                    </p>
+                    <div class="f_right">
+                        <div class="f_right">
+                            <input type="button" value="去结算" class="btn btn_checkout">
+                            <p class="tip tip_checkout">请勾选需要结算的商品<s></s></p>
+                        </div>
+                        <p class="f_right">共<span id="num">
+                                <font id="checkoutNum">1</font>
+                            </span>件商品，　合计：<span>¥<font id="checkoutPrice">819.00</font></span></p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="script/jquery.js"></script>
+    <script src="script/cart.js"></script>
+</body>
+
+</html>

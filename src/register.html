@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+
+<body>
+    <!-- 背景 -->
+    <div class="circle-box">
+        <div class="circle-1"></div>
+        <div class="circle-2"></div>
+        <div class="circle-3"></div>
+        <div class="element-1"></div>
+        <div class="element-2"></div>
+    </div>
+    <!-- 注册头部 -->
+    <div class="topbar-register cl">
+        <h1 class="fl logo fl">
+            <a target="_blank" href="http://www.wanmei.com/">
+            <img src="https://safestatic.games.wanmei.com/passport/reg/images/logo.png" alt=""></a>
+        </h1>
+    </div>
+    
+    <!-- 注册 -->
+    <div class="as_register">
+            <div class="as_wrap ">
+                <!-- <a class="logo" href="javascript:void(0);"></a>             -->
+        <div id="tabCh" class="lan_tabpage tabch" style="display: block;">
+            <h2 class="tit">注册完美通行证</h2>
+            <p class="vicetit">创建完美世界账号，抢先享受全方位的游戏服务</p>
+            <div class="func_tab cl">
+                <a href="" class="cur">邮箱注册（推荐）<i></i></a>
+                <a href="" class="">手机注册 <i></i></a>
+            </div>
+
+            <div class="func_tabpage" style="display: block;">
+                <form action="../php/register.php" autocomplete="off" class="oform" method="POST">
+                    <!-- <input type="hidden" name="from" value="0">
+                    <input type="hidden" name="s" value=""> -->
+                    <div class="ibox mb17 ">
+                        <input name="email" required="required" class="t_phone" type="text" placeholder="邮箱账号">
+                        <i></i>
+                        <span class="ihint ihint_error" style="display: none;"></span>
+                    </div>
+                    <div class="ibox ibox_eye">
+                        <input required="required" name="password" class="pwhide password" type="password" placeholder="密码（由8-16位大小写字母、数字及字符组成）">
+                        <i></i>
+                        <span class="ihint ihint_error" style="display: none;"></span>
+                    </div>
+                    <div class="pwlevel">
+                        <ul class="cl pwlv">
+                            <li class="l"><span></span></li>
+                            <li class="m"><span></span></li>
+                            <li class="h"><span></span></li>
+                        </ul>
+                    </div>
+                    <div class="ibox ibox_eye mb34">
+                        <input required="required" class="pwhide repeat" type="password" placeholder="重复密码">
+                        <i></i>
+                        <span class="ihint ihint_error" style="display: none;"></span>
+                    </div>
+                    <div class="ibox mb17">
+                        <input name="truename" required="required" type="text" placeholder="真实姓名">
+                        <i></i>
+                        <span class="ihint ihint_error" style="display: none;"></span>
+                    </div>
+                    <div class="ibox mb17">
+                        <input name="idnumber" required="required" type="text" placeholder="身份证">
+                        <i></i>
+                        <span class="ihint ihint_error" style="display: none;"></span>
+                    </div>
+                    <!-- <div class="cl vbox">
+                        <div class="fl vboxl">
+                            <div class="ibox">
+                                <input name="rand" type="text" placeholder="验证码">
+                                <i></i>
+                            </div>
+                        </div>
+                        <div class="fl vboxr">
+                            <a class="getMobileRand" href="">获取验证码</a>
+                        </div>
+                    </div> -->
+                    <div class="cbox">
+                        <input class="acceptcb" type="checkbox" checked="checked">
+                        <!-- <i class="check"></i> -->
+                        <span>我接受<a target="" href="http://static.wanmei.com/passport/agreement/003.html">《完美通行证用户协议》</a>&nbsp;&nbsp;<a target="" href="http://static.wanmei.com/passport/agreement/005.html">《隐私政策》</a></span>
+                    </div>
+                    <input class="rbtn_com rbtn_s1 mb15" type="submit" name="submit" value="免费注册通行证">
+                    <a class="rbtn_com rbtn_s2" href="login.html">已经有通行证了？</a>
+                </form>
+            </div>
+
+            <script src="script/jquery.js"></script>
+            <script src="script/register.js"></script>
+
+            
+</body>
+
+</html>

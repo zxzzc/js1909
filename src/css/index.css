@@ -1,0 +1,659 @@
+
+/* 公共样式----------------------------- */
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+html, body {
+    background: #f5f5f5;
+    font-size: 12px;
+    font-family: "Microsoft YaHei",Verdana,Geneva,sans-serif,\5b8b\4f53;
+}
+a {
+    text-decoration: none;
+    color: #666;
+}
+.wrap {
+    width: 1190px;
+    margin: 0 auto;
+}
+
+
+/* 头部部分--------------------------------------- */
+.header {
+    width: 1903px;
+    height: 33px;
+    background-color: #474747;
+    color: #CCC;
+    z-index: 999;
+}
+
+/* 左半部分------------------- */
+.welcome {
+    margin-top: 7px;
+}
+.f_left {
+    float: left;
+}
+/* 右半部分----------------------- */
+/* 购物车--------------- */
+.f_right {
+    float: right;
+}
+.header_cart_tip {
+    width: 138px;
+    position: relative;
+    z-index: 2;
+}
+.header_cart_tip .text {
+    height: 33px;
+    line-height: 33px;
+    background-color: #1e1e1e;
+    text-align: center;
+    cursor: pointer;
+    display: block;
+}
+.header_cart_tip .text .icon {
+    display: inline-block;
+    margin-right: 8px;
+    width: 20px;
+    height: 14px;
+    overflow: hidden;
+    background: url(../images/base.png) no-repeat -164px -20px;
+    vertical-align: -2px;
+}
+.header_cart_tip .cart_list {
+    position: absolute;
+    top: 33px;
+    right: 0;
+    width: 350px;
+    background-color: #fafafa;
+    z-index: 1;
+    display: none;
+    box-shadow: 0 2px 3px #CCC;
+}
+.header_cart_tip .text span {
+    color: #db313e;
+    font-weight: bold;
+    font-family: Arial;
+}
+.header_cart_tip .text:hover {
+    background-color: red;
+    color: white
+}
+.header_cart_tip .text:hover span{
+    color: white
+}
+.header_cart_tip .text:hover .icon{
+    background-color: white
+}
+
+
+/* 鼠标移入显示购物车商品 */
+/* .cart_list{
+    overflow: hidden; 
+    display: none; 
+    height: 106px; 
+    padding-top: 0px; 
+    margin-top: 0px; 
+    padding-bottom: 0px; 
+    margin-bottom: 0px;
+} */
+
+
+
+/* 订单和登陆注册部分--------------- */
+.header dl {
+    margin: 11px 35px 0 0;
+}
+.header dt, .header dd {
+    float: left;
+    padding: 0 7px;
+    height: 11px;
+    line-height: 11px;
+}
+.header dl a {
+    display: inline-block;
+    color: #CCC;
+}
+.header dd {
+    border-left: 1px solid #666;
+}
+.header dl dt a:hover,.header dl dd a:hover{
+    color: whitesmoke;
+}
+.header .hide{
+    display: none;
+}
+/* .header .userhaslogin{
+    display: none;
+} */
+
+
+
+
+
+
+
+/* 导航栏------------------------------------ */
+.top_nav {
+    height: 101px;
+    background-color: #FFF;
+    border-bottom: 3px solid #de2f3c;
+    box-shadow: 0 3px 3px #CCC;
+}
+/* 完美世界logo -----*/
+.top_nav .logo_wm {
+    width: 183px;
+    text-align: center;
+    height: 72px;
+    padding-top: 29px;
+    background-color: #c20315;
+    margin-bottom: -3px;
+}
+/* 商城logl--------- */
+.top_nav .logo_shop {
+    margin: 37px 0 0 34px;
+}
+/* 全部商品部分 */
+.top_nav .all_wares {
+    position: relative;
+    width: 175px;
+    margin-left: 50px;
+    text-indent: 19px;
+    z-index: 1;
+}
+/* 全部商品上的样式 */
+.top_nav .all_wares .text {
+    height: 101px;
+    line-height: 101px;
+    font-size: 15px;
+    cursor: pointer;
+}
+/* 全部商品上的小图标 */
+.top_nav .all_wares .text span {
+    display: inline-block;
+    width: 15px;
+    height: 13px;
+    margin-right: 7px;
+    background: url(../images/base.png) no-repeat -24px 0;
+    vertical-align: -1px;
+}
+
+/* 后四个的样式--------- */
+.top_nav .nav {
+    margin-top: 40px;
+}
+.top_nav .nav li {
+    float: left;
+    padding: 0 15px;
+    font-size: 15px;
+}
+.top_nav .nav li a:hover{
+    color: red;
+}
+/* 搜索框部分----------- */
+.header_search {
+    position: relative;
+    width: 320px;
+    height: 41px;
+    margin-top: 30px;
+    z-index: 1;
+}
+.header_search .text {
+    float: left;
+    width: 263px;
+    height: 39px;
+    line-height: 39px;
+    padding: 0 5px;
+    border: 1px solid #CCC;
+    border-right: 0;
+}
+.header_search .btn {
+    float: right;
+    width: 46px;
+    height: 41px;
+    border: 0;
+    background: #e32332 url(../images/search.png) no-repeat center;
+    cursor: pointer;
+}
+
+/* 搜索框关键字部分 */
+/* .header_search .keyword {
+    position: absolute;
+    top: 1px;
+    right: 56px;
+    height: 30px;
+    padding-top: 9px;
+}
+.header_search .keyword a {
+    display: inline-block;
+    padding: 3px 5px;
+    background-color: #EEE;
+} */
+
+/* 轮播图--------------------------- */
+
+.header_slide {
+    position: relative;
+    height: 439px;
+    /* background-color: #565656; */
+}
+/* 小按钮---------- */
+.hd {
+    position: absolute;
+    left: 0;
+    bottom: 30px;
+    width: 100%;
+    z-index: 1;
+    text-align: center;
+}
+.hd a {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    border-radius: 6px;
+    margin: 0 5px;
+    overflow: hidden;
+    background-color: #eff0f2;
+}
+/* 移到按钮变红色 */
+.hd a:hover {
+    background-color: #e22430;
+}
+
+/* 图片部分 */
+.tempWrap{
+    overflow: hidden; 
+    position: relative; 
+    width: auto;
+}
+.super_slide {
+    width: 3806px;
+    height: 439px;
+    left: 0px;
+    position: relative;
+    overflow: hidden;
+    padding: 0px;
+    margin: 0px;
+}
+
+.super_slide #firstpic {
+    background: url(http://img.shop.wanmei.com/upload/ad/2019-05-30/aa8e00881c05407b81c386a494fe8c69.jpg) center top no-repeat;
+    float: left;
+    width: 1903px;
+    /* height: 439px; */
+    /* background: black; */
+}
+
+.header_slide li a {
+    display: block;
+    width: 1190px;
+    height: 439px;
+    margin: 0 auto;
+}
+
+
+/* 左右箭头部分------------- */
+.header_slide .prev {
+    margin-left: -595px;
+    width: 47px;
+    height: 80px;
+    margin-top: -40px;
+}
+
+.bd .prev {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+.header_slide .next{
+    margin-right: -595px;
+    width: 47px;
+    height: 80px;
+    margin-top: -40px;
+}
+.bd .next {
+    right: 50%;
+    position: absolute;
+    top: 50%;
+
+}
+.bd .prev span{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(../images/base.png) no-repeat 0px -20px;
+}
+.bd .next span{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background:url(../images/base.png) no-repeat -47px -20px;
+}
+
+
+
+/* 三张介绍图 */
+.buying {
+    padding-bottom: 40px;
+    background-color: #FFF;
+}
+.buying .wrap {
+    position: relative;
+    padding-top: 146px;
+}
+.buying .ad_list {
+    position: absolute;
+    top: -14px;
+    left: 0;
+}
+.buying .ad_list a:first-child {
+    margin-left: 0;
+}
+.buying .ad_list a {
+    float: left;
+    margin-left: 16px;
+    width: 386px;
+    height: 160px;
+}
+.buying .wrap .ad_list a:hover{
+    margin-top: -10px;
+    transition: all 0.5s;
+}
+
+
+/* dota2专区---------------------------- */
+.area .title_main {
+    padding: 37px 0 20px 0;
+}
+/* 左右浮动 */
+.f_left {
+    float: left;
+}
+.f_right {
+    float: right;
+}
+
+/* 整体 */
+.title_main {
+    font-size: 28px;
+    zoom: 1;
+    overflow: hidden;
+}
+
+/* 左边文字 */
+.title_main .icon {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    margin-right: 12px;
+    vertical-align: middle;
+}
+/* 左边小图标 */
+.title_main .icon img {
+    width: 35px;
+    height: 35px;
+}
+
+/* 中间文字 */
+.area .title_main dl {
+    margin-left: 116px;
+}
+.title_main dd {
+    float: left;
+    margin-right: 5px;
+    padding: 5px 20px 0 20px;
+    font-size: 16px;
+}
+
+
+.title_main dd a {
+    display: block;
+    padding-bottom: 5px;
+    color: #666;
+}
+.title_main dl a:hover{
+    border-bottom: 3px solid #de2f3c;
+    color: #e90303;
+}
+/* 右边更多选项 */
+.title_main .more {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #666;
+}
+
+.title_main .more span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    background: url(../images/base.png) no-repeat -90px 0;
+    vertical-align: -5px;
+}
+.title_main .more:hover{
+    color: red;
+}
+
+
+/* 下面图片 */
+.area .ad {
+    width: 226px;
+    height: 614px;
+    margin: 0 15px 15px 0;
+}
+.tempWrap .content{
+    width: 949px; left: 0px; 
+    position: relative; 
+    overflow: hidden;
+     padding: 0px; 
+     margin: 0px;
+}
+.tempWrap .content .main{
+    float: left; 
+    width: 965px;
+}
+.area .content .main:first-child {
+    display: block;
+}
+.area .area_slide {
+    position: relative;
+    width: 467px;
+    height: 300px;
+    margin-right: 15px;
+    overflow: hidden;
+}
+
+/* 轮播图下面的按钮 */
+.area .area_slide .hd {
+    bottom: 17px;
+}
+.hd {
+    position: absolute;
+    left: 0;
+    bottom: 30px;
+    width: 100%;
+    z-index: 1;
+    text-align: center;
+}
+.hd a {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    border-radius: 6px;
+    margin: 0 5px;
+    overflow: hidden;
+    background-color: #eff0f2;
+}
+
+.area_slide .bd .cf{
+    width: 467px; 
+    left: 0px; 
+    position: relative;
+    overflow: hidden; 
+    padding: 0px; 
+    margin: 0px;
+}
+.area_slide .bd .cf li{
+    float: left; 
+    width: 467px;
+}
+.area_slide .bd .tempWrap{
+    overflow:hidden;
+     position:relative; 
+     width:467px;
+}
+
+
+
+
+
+
+/* 小轮播图左箭头 */ 
+.area_slide .bd .prev {
+    margin-left: -234px;
+    width: 35px;
+    height: 70px;
+    margin-top: -35px;
+}
+
+.area_slide .bd .prev {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    border-radius: 3px;
+}
+
+.area_slide .bd .prev span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(../images/base.png);
+}
+.area_slide .bd .prev span {
+    background-position: -94px -20px;
+}
+
+
+
+
+/* 小轮播图右箭头 */
+.area_slide .bd .next {
+    margin-right: -234px;
+    width: 35px;
+    height: 70px;
+    margin-top: -35px;
+}
+.area_slide .bd .next {
+    right: 50%;
+    position: absolute;
+    top: 50%;
+    border-radius: 3px;
+}
+.area_slide .bd .next span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(../images/base.png);
+}
+.area_slide .bd .next span {
+    background-position: -129px -20px;
+} 
+
+
+/* 扭蛋手办II */
+.area .list {
+    position: relative;
+    float: left;
+    background-color: #FFF;
+    width: 226px;
+    height: 253px;
+    padding-top: 47px;
+    margin: 0 15px 15px 0;
+    text-align: center;
+}
+
+.area .list .name {
+    font-size: 14px;
+    margin: 15px 15px 5px 15px;
+    max-height: 38px;
+    overflow: hidden;
+}
+.area .list a img {
+    width: 160px;
+    height: 160px;
+}
+.ellipsis{
+    overflow-wrap: break-word;
+    word-break: break-all;
+}
+/* 价格 */
+.area .list .price {
+    font-size: 18px;
+    color: #eb0303;
+    font-family: Arial;
+}
+
+.area .cf .tempWrap .content .list:hover{
+    margin-top: -10px;
+    transition: all 0.5s;  
+}
+.area .cf a:hover{
+    margin-top: -10px;
+    transition: all 0.5s;  
+}
+
+/* 楼梯 */
+
+#loutinav{
+    width: 35px;
+    position: fixed;
+    top: 300px;
+    left: 110px;
+    border: 1px solid #ddd;
+    display: none;
+}
+#loutinav ul li {
+    width: 35px;
+    height: 40px;
+    border-bottom: 1px dotted #DDDDDD;
+    font-size: 12px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    padding: 10px 0;
+    background: #918888;
+    color: #fff;
+}
+#loutinav ul li span {
+    width: 35px;
+    height: 40px;
+    padding: 10px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#loutinav ul li.last {
+    background: #5e4a4a;
+    color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+#loutinav ul li.active span {
+    background: #c00;
+    color: #fff;
+    display: block;
+}
+
+#loutinav ul li:hover span {
+    background: #c00;
+    color: #fff;
+    display: block;
+}
+
+
+
