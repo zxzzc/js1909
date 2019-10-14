@@ -61,7 +61,7 @@ li{
     margin-top: -32px;
 }
 .wrap_dota2-user-info {
-    width: 575px;
+    width: 610px;
     position: absolute;
     right: 50%;
     top: 50%;
@@ -77,12 +77,26 @@ li{
     font-style: 14px;
     color: #fff;
 }
+.wrap_dota2-login {
+    float: left;
+    margin-right: 10px;
+    font-style: 14px;
+    color: #fff;
+    display: none;
+}
 .wrap_dota2-after-login a {
     float: none;
     font-size: 14px;
     margin: 0;
     color: #999;
+    
 }
+
+
+
+
+
+
 .wrap_dota2-after-login a:hover{
     color: red;
 }
@@ -185,12 +199,12 @@ li{
 .picFocus {
     width: 430px;
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
     zoom: 1;
     margin-right: 59px;
 }
 .tempWrap{
-    overflow:hidden; 
+    /* overflow:hidden;  */
     position:relative; 
     width:430px
 }
@@ -199,7 +213,7 @@ li{
     height: 430px;
     left: 0px;
     position: relative; 
-    overflow: hidden; 
+    /* overflow: hidden;  */
 }
 #tempWrap_ul>li{
     float: left;
@@ -211,6 +225,43 @@ li{
 .picFocus .bd #tempWrap_ul .show {
     display: block;
 }
+
+.picFocus .bd .tempWrap #sf{
+    width: 100px;
+    height: 100px;
+    background: orange;
+    opacity: 0.3;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: none;
+}
+
+.picFocus .bd .tempWrap #bf{
+    width: 300px;
+    height: 300px;
+	border: 1px solid #000;
+	overflow: hidden;
+	position: absolute;
+    left: 490px;
+    top: 0px;
+    display: none;
+	z-index: 999;
+}
+
+.picFocus .bd .tempWrap #bf img {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	width:800px;
+	height:800px;   
+}
+
+
+
+
+
+
 
 
 
@@ -372,7 +423,7 @@ li{
 /* 数量计数 */
 .amount {
     display: inline-block;
-    width: 78px;
+    width: 88px;
     height: 22px;
     margin-right: 11px;
     border: 1px solid #e0e0e0;

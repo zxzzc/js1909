@@ -17,6 +17,7 @@ a {
     color: #666;
 }
 .wrap {
+    overflow: hidden;
     width: 1190px;
     margin: 0 auto;
 }
@@ -260,10 +261,13 @@ a {
     overflow: hidden;
     background-color: #eff0f2;
 }
-/* 移到按钮变红色 */
-.hd a:hover {
-    background-color: #e22430;
+.header_slide .hd .on{
+    background-color:#e22430
 }
+/* 移到按钮变红色 */
+/* .hd a:hover {
+    background-color: #e22430;
+} */
 
 /* 图片部分 */
 .tempWrap{
@@ -288,7 +292,11 @@ a {
     /* height: 439px; */
     /* background: black; */
 }
-
+.super_slide #secondpic{
+    background: url(http://img.shop.wanmei.com/upload/ad/2018-12-26/0cb9ca00e3a9451a9aee4a961527051d.jpg) center top no-repeat;
+    float: left;
+    width: 1903px;
+}
 .header_slide li a {
     display: block;
     width: 1190px;
@@ -327,6 +335,13 @@ a {
     width: 100%;
     height: 100%;
     background: url(../images/base.png) no-repeat 0px -20px;
+    
+}
+.bd .prev:hover span{
+    background-color: black;
+}
+.bd .next:hover span{
+    background-color: black;
 }
 .bd .next span{
     display: block;
@@ -460,12 +475,16 @@ a {
 .area .content .main:first-child {
     display: block;
 }
-.area .area_slide {
-    position: relative;
+
+#main .area .tempWrap .content  .dota_slide {
+    position: absolute;
+    top: 0px;
+    left: 0px;
     width: 467px;
     height: 300px;
     margin-right: 15px;
     overflow: hidden;
+    z-index: 1;
 }
 
 /* 轮播图下面的按钮 */
@@ -489,6 +508,11 @@ a {
     overflow: hidden;
     background-color: #eff0f2;
 }
+.hd .on{
+    background-color: red;
+}
+
+    
 
 .area_slide .bd .cf{
     width: 467px; 
@@ -507,6 +531,7 @@ a {
      position:relative; 
      width:467px;
 }
+
 
 
 
@@ -564,6 +589,10 @@ a {
     background-position: -129px -20px;
 } 
 
+.area_slide .bd a:hover span{
+    background-color: black;;
+}
+
 
 /* 扭蛋手办II */
 .area .list {
@@ -599,13 +628,11 @@ a {
 }
 
 .area .cf .tempWrap .content .list:hover{
-    margin-top: -10px;
+    margin-top: -2px;
+    border-bottom:2px solid #CCC ;
     transition: all 0.5s;  
 }
-.area .cf a:hover{
-    margin-top: -10px;
-    transition: all 0.5s;  
-}
+
 
 /* 楼梯 */
 

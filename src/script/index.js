@@ -11,12 +11,35 @@ class index {
         this.span = $('.header .userhaslogin dt a span')
         this.exit = $('.header .userhaslogin dd .exit')
         this.li=$('#main .dota2_area .wrap .tempWrap .main')
+        this.try=$('#main .dota2_area .title_main .try')
+        // this.ptype=$('#main .dota2_area .title_main .ptype')
+        // this.bigpic=$('#main .dota2_area .bigpic')
+        // 渲染第二模块
+        this.li1=$('#main .ws_zb .wrap .tempWrap .main')
+        // 渲染第三模块
+        this.li2=$('#main .game_zb .wrap .tempWrap .main')
+        // 渲染第四模块
+        this.li3=$('#main .csgo_zb .wrap .tempWrap .main')
+        
+        // 左右按钮
+        this.prev=$('.header_slide .bd .prev')
+        this.next=$('.header_slide .bd .next')
+        this.a=$('.header_slide .hd a')
+        this.lunboul=$('.header_slide .bd .tempWrap .super_slide')
+        this.index=0
     }
     init() {
         this.show();
-        this.xuanran();
+        this.xuanran('Dota2专区',this.li);
+        this.xuanran('外设专区',this.li1);
+        this.xuanran('游戏周边',this.li2);
+        this.xuanran('CSGO正版周边',this.li3);
+        this.nav();
+        this.lunbo();
+        // this.xuanran2();
+    }
+    nav(){
         let _this = this;
-
         // 1.滚轮下滑，显示楼梯nav
         $(window).on('scroll', function () {
             let $top = $(this).scrollTop();
@@ -63,8 +86,8 @@ class index {
                 scrollTop: 0
             })
         })
-
     }
+
     show() {
         if (localStorage.getItem('email')) {
             this.dl1.addClass('hide').siblings('dl').removeClass('hide');
@@ -79,53 +102,76 @@ class index {
             _this.dl2.addClass('hide').siblings('dl').removeClass('hide');
         })
     }
+    // 轮播图
+    lunbo(){
+        let _this=this
+        this.next.on('click',function(){
+            _this.index++;
+            if(_this.index==2){
+                _this.index=0
+            }
+            _this.tabswitch()
+        })
+        this.prev.on('click',function(){
+            _this.index--;
+            if(_this.index==-1){
+                _this.index=1
+            }
+            console.log(_this.index)
+            _this.tabswitch()
+        })
+        
+        this.a.on('click',function(){
+            _this.index=$(this).index()
+            _this.tabswitch()
+        })
+    }
+    // 轮播里的切换
+    tabswitch(){
+        if(this.index==this.a.size()-1){
+            this.lunboul.stop(true).animate({
+                left:'-'+this.lunboul.width()/2+'px'
+            })
+            this.a.eq(this.index).addClass('on').siblings('a').removeClass('on')
+        }
+        if(this.index==0){
+            this.lunboul.stop(true).animate({
+                left:'0'
+            })
+            this.a.eq(this.index).addClass('on').siblings('a').removeClass('on')
+        }
+    }
 
-    xuanran() {
+
+    
+    // 渲染主要内容
+    xuanran(ptype,target) {
         let _this=this;
         $.ajax({
             type: 'post',
-            url: 'http://localhost/h51909/item/php/aindex.php',
-            dataType: 'json'
+            url: '../php/aindex.php',
+            dataType: 'json',
+            data:{
+                ptype:ptype
+            }
         }).done(function (datalist) {
-            let strhtml = `
-            <div class="area_slide dota_slide f_left in">
-            <div class="hd"><a href="" class="on"></a></div>
-            <div class="bd">
-                <div class="tempWrap">
-                    <ul class="cf">
-                        <li>
-                            <a href="" target="">
-                                <img
-                                    src="http://img.shop.wanmei.com/upload/moduleScroll/2018-06-11/7cef96d122b64cf7976e4233ef0bbc07.jpg">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <a class="prev" href=""><span></span></a>
-                <a class="next" href=""><span></span></a>
-            </div>
-        </div>
-           
-            `;
+            let strhtml = ``;
             $.each(datalist, function (index, value) {
-                strhtml += `
-                <div class="product-item list in">
-                        <a href="detail.html" target="">
-                                        <img src="${value.url}"
-                                            alt="" title="DOTA2 - 扭蛋手办 II">
-                        </a>
-                            <p class="name ellipsis" title="DOTA2 - 扭蛋手办 II">
-                                    ${value.title}
-                            </p>
-                        <p class="price">${value.price}
-                    </p>
-                 </div>
-                
-                `
+                    strhtml += `
+                    <div class="product-item list in">
+                            <a href="detail.html?sid=${value.sid}" target="">
+                                            <img src="${value.url}"
+                                                alt="" title="DOTA2 - 扭蛋手办 II">
+                            </a>
+                                <p class="name ellipsis" title="DOTA2 - 扭蛋手办 II">
+                                        ${value.title}
+                                </p>
+                            <p class="price">￥${value.price}
+                        </p>
+                     </div>
+                    ` 
             })
-            // console.log(_this.li)
-            // alert(_this.li)
-             _this.li.html(strhtml);
+            target.html(strhtml);
         })
     }
 

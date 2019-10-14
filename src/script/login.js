@@ -21,7 +21,7 @@ class login{
         let _this=this
         $.ajax({
             type:'post',
-            url:'http://localhost/h51909/item/php/login.php',
+            url:'../php/login.php',
             data:{
                 email:this.email.val(),
                 password:this.password.val(),
