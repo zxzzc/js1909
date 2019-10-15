@@ -160,10 +160,10 @@ class index {
                     strhtml += `
                     <div class="product-item list in">
                             <a href="detail.html?sid=${value.sid}" target="">
-                                            <img src="${value.url}"
-                                                alt="" title="DOTA2 - 扭蛋手办 II">
+                                            <img class='lazy' data-original="${value.url}" width='160' heigth='160'
+                                                alt="" title="">
                             </a>
-                                <p class="name ellipsis" title="DOTA2 - 扭蛋手办 II">
+                                <p class="name ellipsis" title="">
                                         ${value.title}
                                 </p>
                             <p class="price">￥${value.price}
@@ -172,7 +172,13 @@ class index {
                     ` 
             })
             target.html(strhtml);
+            $(function () { //页面加载完成
+                $("img.lazy").lazyload({
+                    effect: "fadeIn" //效果方式
+                });
+            });
         })
+        
     }
 
 }

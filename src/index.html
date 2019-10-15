@@ -147,13 +147,13 @@
             <!-- 广告位 -->
             <div class="ad_list">
                 <a href="" target="" class="in tj_link">
-                    <img src="http://img.shop.wanmei.com/upload/ad/2018-08-30/58c1278cc6e54670ab72d6f9b9b3f235.jpg"
+                    <img class="lazy" data-original="http://img.shop.wanmei.com/upload/ad/2018-08-30/58c1278cc6e54670ab72d6f9b9b3f235.jpg"
                         width="386" height="160" title="耳机" alt="耳机"></a>
                 <a href="" target="" class="in tj_link">
-                    <img src="http://img.shop.wanmei.com/upload/ad/2019-02-25/a0d5b5ec5f284a04b84efb5c9d937817.jpg"
+                    <img class="lazy" data-original="http://img.shop.wanmei.com/upload/ad/2019-02-25/a0d5b5ec5f284a04b84efb5c9d937817.jpg"
                         width="386" height="160" title="csgo" alt="csgo"></a>
                 <a href="" target="" class="in tj_link">
-                    <img src="http://img.shop.wanmei.com/upload/ad/2019-01-04/c276224a840b45ffb81d04a457f689d1.jpg"
+                    <img class="lazy" data-original="http://img.shop.wanmei.com/upload/ad/2019-01-04/c276224a840b45ffb81d04a457f689d1.jpg"
                         width="386" height="160" title="dota2粉丝基地" alt="dota2粉丝基地"></a>
             </div>
         </div>
@@ -316,8 +316,16 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="script/jquery.lazyload.js"></script>
     <script src="script/index.js"></script>
     <script src="script/login.js"></script>
+    <script>
+    $(function () { //页面加载完成
+            $("img.lazy").lazyload({
+                effect: "fadeIn" //效果方式
+            });
+        });
+    </script>
 </body>
 
 </html>

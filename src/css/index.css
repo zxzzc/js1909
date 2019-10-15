@@ -17,7 +17,7 @@ a {
     color: #666;
 }
 .wrap {
-    overflow: hidden;
+    /* overflow: hidden; */
     width: 1190px;
     margin: 0 auto;
 }
@@ -360,11 +360,13 @@ a {
 .buying .wrap {
     position: relative;
     padding-top: 146px;
+
 }
 .buying .ad_list {
     position: absolute;
     top: -14px;
     left: 0;
+    z-index: 999;
 }
 .buying .ad_list a:first-child {
     margin-left: 0;
@@ -374,6 +376,7 @@ a {
     margin-left: 16px;
     width: 386px;
     height: 160px;
+    z-index: 999;
 }
 .buying .wrap .ad_list a:hover{
     margin-top: -10px;
@@ -382,6 +385,7 @@ a {
 
 
 /* dota2专区---------------------------- */
+
 .area .title_main {
     padding: 37px 0 20px 0;
 }
@@ -414,6 +418,15 @@ a {
     height: 35px;
 }
 
+.ws_zb{
+    overflow: hidden;
+}
+.game_zb {
+    overflow: hidden;
+}
+.csgo_zb{
+    overflow: hidden;
+}
 /* 中间文字 */
 .area .title_main dl {
     margin-left: 116px;

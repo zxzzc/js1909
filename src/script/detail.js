@@ -31,7 +31,7 @@ const goods_detail = $('.goods_detail')
 
 
 
-
+//头部登陆部分
 function toLogin() {
     if (localStorage.getItem('email')) {
         // console.log(tologin[0])
@@ -47,9 +47,9 @@ function toLogin() {
         tologin.show()
     })
 }
-// 渲染
+// 渲染部分
 function render() {
-    getid=location.search.split('=')
+    getid = location.search.split('=')
     // console.log(getid)
     $.ajax({
         type: 'post',
@@ -128,66 +128,66 @@ function render() {
             </table>
             <div class="btns">
                 <a href="" class="buy btn_buy">立即购买</a>
-                <a href="cart.html" class="add btn_addCart"><span></span>加入购物车</a>
+                <a href='' class="add btn_addCart"><span></span>加入购物车</a>
             </div>
         </div>
     </div>`
         goods_detail.html(strhtml)
         const ul = $('.gallery .picFocus .hd ul')
         var arr = []
-        var arrbigpic=[]
+        var arrbigpic = []
         arr = datalist[0].urls.split(',')
-        arrbigpic=datalist[0].bigpic.split(',')
+        arrbigpic = datalist[0].bigpic.split(',')
         console.log(arrbigpic)
-        let lihtml=''
+        let lihtml = ''
         for (let i = 0; i < arr.length; i++) {
-            lihtml+=`<li class=""><img src="${arr[i]}" width="100" height="100" alt="" title="DOTA2 - 扭蛋手办 II"></li>`
+            lihtml += `<li class=""><img src="${arr[i]}" width="100" height="100" alt="" title="DOTA2 - 扭蛋手办 II"></li>`
         }
         ul.html(lihtml)
 
         // 点击li的图片大图切换
-        const li=$('.gallery .picFocus .hd ul li')
-        const bigpic=$('.gallery .picFocus .show img')
-        li.on('click',function () {
+        const li = $('.gallery .picFocus .hd ul li')
+        const bigpic = $('.gallery .picFocus .show img')
+        li.on('click', function () {
             bigpic.hide();
             console.log(arrbigpic[$(this).index()])
-             bigpic.attr('src',arrbigpic[$(this).index()]).show().eq(li.index())
+            bigpic.attr('src', arrbigpic[$(this).index()]).show().eq(li.index())
         })
 
 
         // 点击+ -添加减少数量
-        const add=$('.property .amount .plus')
-        const number=$('.property .amount input')
-        const reduce=$('.property .amount .reduce')
-        add.on('click',function(){
-            number.attr('value',Number(number.val())+1)
+        const add = $('.property .amount .plus')
+        const number = $('.property .amount input')
+        const reduce = $('.property .amount .reduce')
+        add.on('click', function () {
+            number.attr('value', Number(number.val()) + 1)
         })
-        reduce.on('click',function(){
-            number.attr('value',Number(number.val())-1)
-            if(number.val()<=1){
-                number.attr('value',1)    
+        reduce.on('click', function () {
+            number.attr('value', Number(number.val()) - 1)
+            if (number.val() <= 1) {
+                number.attr('value', 1)
             }
         })
 
 
         // 鼠标移入显示放大镜
-        const sf=$('.picFocus .bd .tempWrap  .show #sf')//小放
-        const spic=$('.gallery .picFocus .show ')//小图
-        const bf=$('.picFocus .bd .tempWrap #bf')//大放
-        const maxpic=$('.picFocus .bd .tempWrap #bpic')//大图
-        const wrap=$('.gallery')
+        const sf = $('.picFocus .bd .tempWrap  .show #sf')//小放
+        const spic = $('.gallery .picFocus .show ')//小图
+        const bf = $('.picFocus .bd .tempWrap #bf')//大放
+        const maxpic = $('.picFocus .bd .tempWrap #bpic')//大图
+        const wrap = $('.gallery')
 
-        spic.hover(function(){
+        spic.hover(function () {
             sf.show()
             bf.show()
-            maxpic.attr('src',bigpic[0].src)
-            sf.css('width',spic[0].offsetWidth * bf[0].offsetWidth / maxpic[0].offsetWidth)
-            sf.css('height',spic[0].offsetHeight * bf[0].offsetHeight / maxpic[0].offsetHeight)
+            maxpic.attr('src', bigpic[0].src)
+            sf.css('width', spic[0].offsetWidth * bf[0].offsetWidth / maxpic[0].offsetWidth)
+            sf.css('height', spic[0].offsetHeight * bf[0].offsetHeight / maxpic[0].offsetHeight)
             let bili = bf[0].offsetWidth / sf[0].offsetWidth;
-            $(this).on('mousemove',function(ev){
-                 var ev=ev||window.event;
-                 let l = ev.clientX - wrap[0].offsetLeft - sf[0].offsetWidth / 2;
-                 let t = ev.clientY - wrap[0].offsetTop - sf[0].offsetHeight / 2;
+            $(this).on('mousemove', function (ev) {
+                var ev = ev || window.event;
+                let l = ev.clientX - wrap[0].offsetLeft - sf[0].offsetWidth / 2;
+                let t = ev.clientY - wrap[0].offsetTop - sf[0].offsetHeight / 2;
                 if (l <= 0) {
                     l = 0;
                 } else if (l >= spic[0].offsetWidth - sf[0].offsetWidth) {
@@ -198,19 +198,57 @@ function render() {
                 } else if (t >= spic[0].offsetHeight - sf[0].offsetHeight) {
                     t = spic[0].offsetHeight - sf[0].offsetHeight - 2;
                 }
-
-
-                sf.css('left',l)
-                sf.css('top',t)
-                maxpic.css('left',-l*bili)
-                maxpic.css('top',-t*bili)
+                sf.css('left', l)
+                sf.css('top', t)
+                maxpic.css('left', -l * bili)
+                maxpic.css('top', -t * bili)
             })
-            
-            
-        },function(){
+        }, function () {
             sf.hide()
             bf.hide()
         })
+
+        //点击添加按钮，添加购物车
+        let sidarr = [] //存放id
+        let numarr = [] //存放数量
+
+
+        const sid = location.search.substring(1).split('=')[1];//取得地址栏上的sid
+        const addbtn = $('.goods_detail .property .btns .btn_addCart')
+        // const number=$('.property .amount input')//数量
+
+
+        //提前预定cookie的key值
+        if (getcookie('cookiesid') && getcookie('cookienum')){
+            sidarr = getcookie('cookiesid').split(',');
+            numarr = getcookie('cookienum').split(',');
+        }
+
+            addbtn.on('click', function () {
+                alert('商品添加成功')
+                console.log(sid[0])
+                // console.log(number.val())
+
+                //判断是不是第一次加商品，如果不是第一添加只需要数量累加
+                if (sidarr.indexOf(sid) != -1) {
+                    let index=sidarr.indexOf(sid)
+                    //之前的数量加上这个input上的数量
+                    numarr[index]=parseInt(numarr[index])+parseInt(number.val())
+                    addcookie('cookienum',numarr.toString(),10)
+                } else {//第一次添加直接添加
+                    sidarr.push(sid)
+                    addcookie('cookiesid', sidarr.toString(), 10)//10代表存十天
+                    numarr.push(number.val());
+                    addcookie('cookienum', numarr.toString(), 10)
+                }
+                console.log(sidarr)
+                console.log(numarr)
+            })
+
+
+
+
+
 
 
 
@@ -218,7 +256,10 @@ function render() {
 
     })
 
-    // console.log(bigpic[0])
+
+
+
+
 
 
 
