@@ -311,20 +311,24 @@ span.checkbox label {
     float: left;
 }
 .cart_list td img {
-    width: 72px;
-    height: 72px;
+    width: 90px;
+    height: 90px;
     border: 1px solid #ddd;
+}
+.cart_list dt {
+    /* text-align: left; */
+    margin-left: 15px;
 }
 .cart_list dd {
     text-align: left;
-    margin-left: 18px;
+    margin-left: 15px;
 }
 .cart_list dl {
     margin: 15px 0 ;
     margin-bottom: 29px;
 }
 .cart_list dd h1 {
-    width: 486px;
+    width: 50px;
     display: block;
     font-size: 14px;
     color: #424242;
@@ -470,6 +474,10 @@ span.checkbox label {
     margin: 0 7px;
     color: #e90404;
 }
+.total_bar .f_right #checkoutPrice{
+    font-size: 24px;
+}
+
 
 
 

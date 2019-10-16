@@ -8,54 +8,9 @@ const content2 = $('.cart_list #cartForm .total_bar')
 const chooseAll = $('.selectall');
 // const choose = $('.select')
 const content = $('.cart_list #cartForm #content')
-const sumproduct=$('.cart_list .total_bar #num')
 
 
-// function weituo(){
-//     content.on('click',function(ev){
-//         // alert(1)
-//         var ev=ev||window.event
-//         var element=ev.target||ev.srcElement
-//         if(element.nodeName=='INPUT'){
-//             // console.log(chooseAll.length)
-//             // alert(1)
-//             // console.log(1)
-//             // $('element').on('click',function(){
-//             //     console.log(1)
-//             // console.log($('this:checked')[0])
-//              console.log($(element)[0]:checked)
-//             //     if($('element:checked').length==$('element').length){
-//             //         chooseAll.prop('checked',true)
-//             //     }else{
-//             //         chooseAll.prop('checked',false)
-//             //     }
-//             // })
-//         }   
-//     })
-// }
-// weituo()
-
-
-
-// this.choose.on('click', function () {
-//             // console.log($('.select:checked').length)
-//             if ($('.select:checked').length == _this.choose.length) {
-//                 _this.chooseAll.prop('checked', true)
-//             } else {
-//                 _this.chooseAll.prop('checked', false)
-//             }
-//         })
-
-
-// this.chooseAll.on('click', function () {
-//             if ($(this).prop('checked')) {
-//                 _this.choose.prop('checked', true)
-//             } else {
-//                 _this.choose.prop('checked', false)
-//             }
-//         })
-
-
+let cartnull=$('.cart_null')
 
 
 // 头部显示登陆注册或着登陆上显示账户
@@ -88,18 +43,18 @@ function render(sid, num) {
         dataType: 'json',
     }).done(function (datalist) {
         // console.log(datalist)
+        let strhtml='';
         $.each(datalist, function (index, value) {
             if (datalist[index].sid == sid) {
-                let strhtml = ``;
                 strhtml += `<tr>
         <td class="state">
             <span class="checkbox">
                 <input class="select" type="checkbox" name="pids" value="" >
             </span>
         </td>
-        <td>
+        <td >
             <dl class="cf">
-                <dt class="f_left"><a href="" target=""><img
+                <dt class="f_left"><a href="detail.html?sid=${datalist[index].sid}" target=""><img
                             src="${datalist[index].url}"
                             alt="" title=""></a></dt>
                 <dd class="f_left">
@@ -123,42 +78,107 @@ function render(sid, num) {
         </td>
         <td class="price">¥<font class='zongjia'>${datalist[index].price * num}</font>
         </td>
-        <td><a href="" class="del"><span></span></a></td>
+        <td class='${datalist[index].sid}'><a href="#" class="del"><span></span></a></td>
     </tr>`
-                content[0].innerHTML += strhtml
             }
         })
 
+        content.html(content.html()+strhtml);
+
         // 全选部分
-        const choose = $('.select')
-        quanxuan(choose)
-        // 加减部分
-        const add = $('.cart_list .amount .plus')
-        const number = $('.cart_list .amount input')
-        const reduce = $('.cart_list .amount .reduce')
-        const kucun = $('.stock .kucun')
-        const zongjia = $('.price .zongjia')
-        const danjia = $('.price .danjia')
-        operation(add, number, reduce, kucun, zongjia, danjia)
+     let choose = $('.select')
 
-
+     // 加减部分
+     const add = $('.cart_list .amount .plus')
+     const number = $('.cart_list .amount input')
+     const reduce = $('.cart_list .amount .reduce')
+     
+     const kucun = $('.stock .kucun')
+     const zongjia = $('.price .zongjia')
+     const danjia = $('.price .danjia')
+     const shanchu = $('#content .del')
+     operation(add, number, reduce, kucun, zongjia, danjia, choose)
+     quanxuan(number, zongjia, choose)
+     dele(shanchu, number, zongjia, choose)
+     zongji(number,choose)
+     heji(zongjia,choose)
 
 
     })
+     
 }
 
-function zongji(sumproduct,number){
-    let a=0
-    $.each(number,function(index,value){
-        a+=Number(number[index].value)
+// setTimeout(function(){
+//     console.log($('table tr').length);
+// },300)
+
+// 点击❌按钮删除
+function dele(shanchu, number, zongjia, choose) {
+    let arrsid = getcookie('cookiesid').split(',');
+    let arrnum = getcookie('cookienum').split(',');
+    
+    $.each(shanchu, function (index, value) {
+        $(value).on('click', function () {
+            // console.log(number.length)
+            if (confirm('你确定要删除吗')) {
+                $(this).parent().parent().remove()
+                // let number2=$('.cart_list .amount input')
+                // let choose2=$('.select')
+                // console.log(number2.length)
+                for (let i = 0; i < arrsid.length; i++) {
+                    if (arrsid[i] == $(this).parent().attr('class')) {
+                        arrsid.splice(i, 1)
+                        arrnum.splice(i, 1)
+                    }
+                }
+                addcookie('cookiesid', arrsid.toString(), 10);
+                addcookie('cookienum', arrnum.toString(), 10);
+                zongji(number, choose)
+                heji(zongjia, choose)
+                location.reload();
+            }
+        })
     })
-    sumproduct.html(a)
+
+
+
 }
+
+
+
+
+
+// 总计数量部分
+function zongji(number, choose) {
+    let sumproduct = $('#num')
+    let a = 0
+    // console.log(choose.prop('checked'))
+    choose.each(function (index, value) {
+        if (choose.eq(index).prop('checked')) {
+            a += Number(number.eq(index).val())
+        }
+        sumproduct.html(a)
+    })
+}
+// 合计价格部分
+function heji(zongjia, choose) {
+    let checkoutprice = $('#checkoutPrice')
+    // console.log(checkoutprice[0])
+    let b = 0
+    choose.each(function (index, value) {
+        if ($(value).prop('checked')) {
+            b += Number(zongjia.eq(index).html())
+        }
+        checkoutprice.html(b)
+    })
+}
+
+
 
 
 
 // 加减部分
-function operation(add, number, reduce, kucun, zongjia, danjia,sumproduct) {
+function operation(add, number, reduce, kucun, zongjia, danjia, choose) {
     $.each(add, function (index, value) {
         $(value).on('click', function () {
             let anum = number.eq(index).val()
@@ -167,8 +187,10 @@ function operation(add, number, reduce, kucun, zongjia, danjia,sumproduct) {
                 number.eq(index).val(anum)
                 zongjia.eq(index).html(anum * danjia.eq(index).html())
                 // sumproduct[0].innerHTML+=anum
-                zongji(sumproduct,number)
+                // zongji(sumproduct,number)
             }
+            zongji(number, choose)
+            heji(zongjia, choose)
         })
     })
     $.each(reduce, function (index, value) {
@@ -179,13 +201,21 @@ function operation(add, number, reduce, kucun, zongjia, danjia,sumproduct) {
                 number.eq(index).val(anum)
                 zongjia.eq(index).html(anum * danjia.eq(index).html())
             }
+            zongji(number, choose)
+            heji(zongjia, choose)
         })
     })
 }
 // 全选部分
-function quanxuan(choose) {
+function quanxuan(number, zongjia, choose) {
+    if (chooseAll.prop('checked')) {
+        choose.prop('checked', true)
+    } else {
+        choose.prop('checked', false)
+    }
     choose.on('click', function () {
-        // console.log($('.select:checked').length)
+        zongji(number, choose);
+        heji(zongjia, choose);
         if ($('.select:checked').length == choose.length) {
             chooseAll.prop('checked', true)
         } else {
@@ -198,19 +228,24 @@ function quanxuan(choose) {
         } else {
             choose.prop('checked', false)
         }
+        zongji(number, choose);
+        heji(zongjia, choose);
     })
 }
 
 
 
 function cook() {
-    // let _this = this;
     if (getcookie('cookiesid') && getcookie('cookienum')) {
         let arrsid = getcookie('cookiesid').split(',');
         let arrnum = getcookie('cookienum').split(',');
         for (let i = 0; i < arrsid.length; i++) {
             render(arrsid[i], arrnum[i])//给渲染传参
         }
+    }else{
+        cartnull.css({
+            display:'block'
+        })
     }
 }
 cook()
